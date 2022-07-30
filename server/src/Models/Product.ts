@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Product = new mongoose.Schema(
   {
     image: { type: String, require: true },
@@ -9,4 +9,4 @@ const Product = new mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("product", Product);
+export { Product };

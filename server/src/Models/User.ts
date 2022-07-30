@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const User = new mongoose.Schema(
   {
     firstName: { type: String, require: true },
@@ -7,11 +7,13 @@ const User = new mongoose.Schema(
     image:{type: String},
     password:{ type: String, require: true },
     isAdmin: { type: Boolean, default: false },
-    myAppointment:{ type: Date, default: Date.now },
+    appointment:{ type: Date, default: Date.now },
     phoneNumber:{ type: Number, require: true},
     userId:{ type: String, require: true },
 
   },
   { timestamps:true}
 );
-module.exports=mongoose.model('user',User)
+export {User}
+
+

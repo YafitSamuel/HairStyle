@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+
+import mongoose from "mongoose";
 const Appointment = new mongoose.Schema(
   {
     userId: { type: String, require: true },
@@ -7,4 +8,5 @@ const Appointment = new mongoose.Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("appointment", Appointment);
+// module.exports = mongoose.model("appointment", Appointment);
+export { Appointment };
