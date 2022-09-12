@@ -26,8 +26,5 @@ router.put("/update/:id", upDate);
 
 router.delete("/delete/:id", remove);
 
-// app.delete("/tasks/:id", verifyToken, (req: Request, res: Response) => {
-//   return deleteTaskHelper(req, res);
-// });
 
 export { router };

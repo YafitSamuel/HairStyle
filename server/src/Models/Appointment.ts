@@ -8,5 +8,5 @@ const Appointment = new mongoose.Schema(
   },
   { timestamps: true }
 );
-// module.exports = mongoose.model("appointment", Appointment);
+
 export { Appointment };
