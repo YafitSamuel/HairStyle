@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 import User from "../src/Models/User";
-import Joi, { any, string } from "joi";
+import Joi from "joi";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 // //Register Validation
+
 async function register(req: Request, res: Response) {
   const schemaRegisterVal = Joi.object({
     name: Joi.string().min(2).required(),
@@ -65,16 +66,16 @@ async function login(req: Request, res: Response) {
 
   //Middleware
 
-  // function auth(req: any, res: Response) {
-  //   const token = req.header("auth-token");
-  //   if (!token) res.status(401).send("access denied");
+  function auth(req: any, res: Response) {
+    const token = req.header("auth-token");
+    if (!token) res.status(401).send("access denied");
 
-  //   try {
-  //     const verified = jwt.verify(token, SECRET_TOKEN);
-  //   } catch {
-  //     res.status(400).send("Invalid Token");
-  //   }
-  // }
+    try {
+      const verified = jwt.verify(token, SECRET_TOKEN);
+    } catch {
+      res.status(400).send("Invalid Token");
+    }
+  }
 }
 
 export { register, login };

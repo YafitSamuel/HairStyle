@@ -1,10 +1,13 @@
 import mongoose from "mongoose";
 
-const Notifications = new mongoose.Schema(
+const notificationsSchema = new mongoose.Schema(
   {
-    userId: { type: String, require: true },
-    typeOfTreatment: { type: String, require: true },
+    userId: String,
+    typeOfTreatment: String
   },
   { timestamps: true }
 );
-export { Notifications };
+const Notifications = mongoose.model("notifications", notificationsSchema);
+
+export default Notifications;
+
