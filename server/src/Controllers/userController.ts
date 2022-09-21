@@ -1,5 +1,4 @@
 import { Response, Request } from "express";
-// import { router } from "../Routes/userRoute";
 import userSchema from "../Models/User";
 
 const get = async (req: Request, res: Response) => {
@@ -15,7 +14,7 @@ const getById = async (req: Request, res: Response) => {
   await userSchema
     .findById(req.params.id)
     .then((id) => {
-      res.status(200).send(`user ${req.params.id} exist`);
+      res.status(200).send(`user ${req.params.id} exist `);
     })
     .catch((error) => res.status(404).send("not found user"));
 };

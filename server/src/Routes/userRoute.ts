@@ -10,21 +10,21 @@ const router = express.Router();
 
 // GET users
 
-router.get("/", get);
+router.get("/users", get);
 
 // GET users/:id
 
-router.get("/:id", getById);
+router.get("/users/:id", getById);
 
 // POST users
-router.post("/add", post);
+router.post("/users", post);
 
 // POST put
-router.put("/update/:id", upDate);
+router.put("/users/:id", upDate);
 
 // POST delete
 
-router.delete("/delete/:id", remove);
+router.delete("/users/:id", remove);
 
 
 export { router };

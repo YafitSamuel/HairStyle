@@ -1,12 +1,11 @@
 import express from "express";
 import {
-    get,
-    getById,
-    post,
-    remove
-}
- 
-from "../Controllers/notificationsController";
+  get,
+  getById,
+  post,
+  remove,
+} from "../Controllers/notificationsController";
+
 const notificationsRouter = express.Router();
 
 notificationsRouter.get("/notification", get);
@@ -16,8 +15,8 @@ notificationsRouter.get("/notification", get);
 notificationsRouter.get("/notification/:id", getById);
 
 // POST users
-notificationsRouter.post("/notification", post);
 
+notificationsRouter.post("/notification", post);
 
 // POST delete
 

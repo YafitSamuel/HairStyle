@@ -3,6 +3,8 @@ import { connectDb } from "./DB/db";
 import dotenv from "dotenv";
 import { router } from "./Routes/userRoute";
 import { notificationsRouter } from "./Routes/notificationsRoute";
+import { productRouter } from "./Routes/ProductRoute";
+
 import { register, login } from "../config/auth";
 
 const port = process.env.PORT || 8001;
@@ -12,6 +14,8 @@ connectDb.then((val) => val).catch((err) => err);
 app.use(express.json());
 app.use(router);
 app.use(notificationsRouter);
+app.use(productRouter);
+
 
 app.listen(port, () => {
   console.log(`app listening to port ${port}`);

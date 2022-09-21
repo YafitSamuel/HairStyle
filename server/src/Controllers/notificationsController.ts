@@ -10,7 +10,7 @@ const get = async (req: Request, res: Response) => {
       .catch((err) => res.status(404).send("not found notification" ));
   };
 
-const getById = async (req: Request, res: Response) => {
+const getById = async (req: Request, res: Response) => { 
   await notificationsSchema
     .findById(req.params.id)
     .then((id) => {
