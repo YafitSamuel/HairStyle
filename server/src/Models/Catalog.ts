@@ -1,9 +1,12 @@
 
 import mongoose from "mongoose";
-const Catalog = new mongoose.Schema(
+const catalogSchema = new mongoose.Schema(
   {
     image: "String",
   },
   { timestamps: true }
 );
-export { Catalog };
+
+const Catalog = mongoose.model("Catalog", CatalogSchema);
+
+export default Catalog ;
