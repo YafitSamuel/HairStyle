@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 const Catalog = new mongoose.Schema(
   {
-    image: { type: String, require: true },
+    image: "String",
   },
   { timestamps: true }
 );
