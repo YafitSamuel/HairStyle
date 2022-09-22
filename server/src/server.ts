@@ -5,6 +5,8 @@ import { router } from "./Routes/userRoute";
 import { notificationsRouter } from "./Routes/notificationsRoute";
 import { productRouter } from "./Routes/ProductRoute";
 import { catalogRouter } from "./Routes/catalogRoutes";
+import { appointmentRouter } from "./Routes/appointmentRoutes";
+
 
 
 import { register, login } from "../config/auth";
@@ -18,6 +20,8 @@ app.use(router);
 app.use(notificationsRouter);
 app.use(productRouter);
 app.use(catalogRouter);
+app.use(appointmentRouter);
+
 
 
 
