@@ -5,7 +5,7 @@ import {
   post,
   upDate,
   remove,
-} from "../Controllers/catalogController";
+} from "../Controllers/appointmentController";
 const appointmentRouter = express.Router();
 
 // GET users
