@@ -13,8 +13,8 @@ const get = async (req: Request, res: Response) => {
 const getById = async (req: Request, res: Response) => { 
   await notificationsSchema
     .findById(req.params.id)
-    .then((id) => {
-      res.status(200).send(`notification ${req.params.id} exist`);
+    .then((sendDataById) => {
+      res.status(200).send(`notification ${req.params.id} exist:${sendDataById}`);
     })
     .catch((err) => res.status(404).send("doesn't exists"));
 };

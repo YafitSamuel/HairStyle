@@ -13,8 +13,8 @@ const get = async (req: Request, res: Response) => {
 const getById = async (req: Request, res: Response) => {
   await userSchema
     .findById(req.params.id)
-    .then((id) => {
-      res.status(200).send(`user ${req.params.id} exist `);
+    .then((sendDataById) => {
+      res.status(200).send(`user ${req.params.id} exist:${sendDataById} `);
     })
     .catch((error) => res.status(404).send("not found user"));
 };

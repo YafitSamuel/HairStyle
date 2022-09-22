@@ -1,42 +1,42 @@
 import { Response, Request } from "express";
-import productSchema from "../Models/Product";
+import catalogSchema from "../Models/Catalog";
 
 const get = async (req: Request, res: Response) => {
-    await productSchema
+    await catalogSchema
       .find()
       .then((data) => {
         res.status(200).send(data);
       })
-      .catch((err) => res.status(404).send("not found product" ));
+      .catch((err) => res.status(404).send("not found catalog" ));
   };
 
 const getById = async (req: Request, res: Response) => {
-  await productSchema
-    .findById(req.params.id)
+  await catalogSchema
+    .findById(req.params.id,req.body)
     .then((sendDataById) => {
-      res.status(200).send(`product ${req.params.id} exist:${sendDataById}`);
+      res.status(200).send(`catalog ${req.params.id} exist:${sendDataById}`);
     })
     .catch((err) => res.status(404).send("doesn't exists"));
 };
 
 const post = async (req: Request, res: Response) => {
-  await productSchema
+  await catalogSchema
     .create(req.body)
-    .then((productsData) => res.status(200).send(`this products add : ${productsData}`))
+    .then((catalogsData) => res.status(200).send(`this catalog add : ${catalogsData}`))
     .catch((err) => res.status(400).send(err));
 };
 
 const upDate = async (req: Request, res: Response) => {
-    await productSchema
+    await catalogSchema
       .findByIdAndUpdate(req.params.id, req.body)
-      .then((upDateProduct) =>
-        res.status(200).send(`this product upDate : ${upDateProduct}`)
+      .then((upDateCatalog) =>
+        res.status(200).send(`this Catalog upDate : ${upDateCatalog}`)
       )
       .catch((err) => res.status(400).send(err));
   };
 
 const remove = async (req: Request, res: Response) => {
-  await productSchema
+  await catalogSchema
     .findByIdAndDelete(req.params.id)
     .then((id) => {
       res.status(200).send(`deleted`);

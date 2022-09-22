@@ -7,6 +7,6 @@ const catalogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Catalog = mongoose.model("Catalog", CatalogSchema);
+const Catalog = mongoose.model("catalogs", catalogSchema);
 
 export default Catalog ;
