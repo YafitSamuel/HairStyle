@@ -26,6 +26,23 @@ const post = async (req: Request, res: Response) => {
     .catch((err) => res.status(400).send(err));
 };
 
+// const upDate = async (req: Request, res: Response) => {
+//   await notificationsSchema
+//     .findByIdAndUpdate(req.params.id, req.body)
+//     .then((notificationsSchema) =>
+//       res.status(200).send(`this notification upDate : ${upDateNotification}`)
+//     )
+//     .catch((err) => res.status(400).send(err));
+// };
+const upDate = async (req: Request, res: Response) => {
+  // console.log("req", req);
+  await notificationsSchema
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then((notificationsSchema) =>
+      res.status(200).send(`this appointment upDate : ${notificationsSchema}`)
+    )
+    .catch((err) => res.status(400).send(err));
+};
 
 
 const remove = async (req: Request, res: Response) => {
@@ -36,7 +53,7 @@ const remove = async (req: Request, res: Response) => {
     })
     .catch((error) => res.status(404).send(" massage:error"));
 };
-export { get ,getById, post, remove};
+export { get ,getById, post, remove , upDate};
 
 
 

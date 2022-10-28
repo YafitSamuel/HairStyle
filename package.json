@@ -5,17 +5,23 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && nodemon server.ts",
-    "dev": "cd server && npm run dev"
+    "start": "cd client && npm start",
+    "server": "cd server && npm run server",
+    "dev": "concurrently \"npm run server\" \"npm start\""
+
+
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@types/bcrypt-nodejs": "^0.0.31",
     "@types/cors": "^2.8.12",
     "@types/jsonwebtoken": "^8.5.9",
+    "axios": "^1.1.2",
     "bcryptjs": "^2.4.3",
-    "concurrently": "^7.3.0",
+    "concurrently": "^7.5.0",
     "cors": "^2.8.5",
     "joi": "^17.6.0",
     "passport": "^0.6.0",

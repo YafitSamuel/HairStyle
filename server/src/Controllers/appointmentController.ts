@@ -2,17 +2,17 @@ import { Response, Request } from "express";
 import appointmentSchema from "../Models/Appointment";
 
 const get = async (req: Request, res: Response) => {
-    await appointmentSchema
-      .find()
-      .then((data) => {
-        res.status(200).send(data);
-      })
-      .catch((err) => res.status(404).send("not found appointment" ));
-  };
+  await appointmentSchema
+    .find()
+    .then((data) => {
+      res.status(200).send(data);
+    })
+    .catch((err) => res.status(404).send("not found appointment"));
+};
 
 const getById = async (req: Request, res: Response) => {
   await appointmentSchema
-    .findById(req.params.id,req.body)
+    .findById(req.params.id, req.body)
     .then((sendDataById) => {
       res.status(200).send(`${sendDataById} `);
     })
@@ -22,18 +22,21 @@ const getById = async (req: Request, res: Response) => {
 const post = async (req: Request, res: Response) => {
   await appointmentSchema
     .create(req.body)
-    .then((appointmentsData) => res.status(200).send(`this appointment add : ${appointmentsData}`))
+    .then((appointmentsData) =>
+      res.status(200).send(`this appointment add : ${appointmentsData}`)
+    )
     .catch((err) => res.status(400).send(err));
 };
 
 const upDate = async (req: Request, res: Response) => {
-    await appointmentSchema
-      .findByIdAndUpdate(req.params.id, req.body)
-      .then((upDateAppointment) =>
-        res.status(200).send(`this appointment upDate : ${upDateAppointment}`)
-      )
-      .catch((err) => res.status(400).send(err));
-  };
+  // console.log("req", req);
+  await appointmentSchema
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then((upDateAppointment) =>
+      res.status(200).send(`this appointment upDate : ${upDateAppointment}`)
+    )
+    .catch((err) => res.status(400).send(err));
+};
 
 const remove = async (req: Request, res: Response) => {
   await appointmentSchema
@@ -43,8 +46,4 @@ const remove = async (req: Request, res: Response) => {
     })
     .catch((error) => res.status(404).send(" massage:error"));
 };
-export { get ,getById, post ,upDate, remove};
-
-
-
-
+export { get, getById, post, upDate, remove };

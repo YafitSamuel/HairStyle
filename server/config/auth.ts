@@ -39,6 +39,14 @@ async function register(req: Request, res: Response) {
   }
 }
 
+
+interface LoginModel {
+  email: string;
+  password: string;
+  type: string;
+}
+
+
 //Login
 async function login(req: Request, res: Response) {
   const schemaLoginVal = Joi.object({
@@ -51,24 +59,23 @@ async function login(req: Request, res: Response) {
   if (error) return res.status(400).send(error.details[0].message);
 
   //Check if email exist
-  const user: any =await User.findOne({ email: req.body.email });
+  const user: any = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("Email  is wrong");
 
-  //Password id correct
+  //Password is correct
   const passwordValid = await bcrypt.compare(req.body.password, user.password);
-  if (!passwordValid) return res.status(400).send("Invalid Password  ");
-  res.send("logged In");
+  if (!passwordValid) return res.status(400).send("Invalid Password");
+  // res.send("logged In");
 
   //Create and assign a token
-  let SECRET_TOKEN:any = process.env.SECRET_TOKEN; //env file
-  const token =  jwt.sign({ _id: user._id }, SECRET_TOKEN);
-  res.header("auth-token", token).send(token);
+  let SECRET_TOKEN: any = process.env.SECRET_TOKEN; //env file
+  const token = jwt.sign({ _id: user._id }, SECRET_TOKEN); 
+  res.header("auth-token", token).send({token,email:req.body.email});
 
   //Middleware
-
   function auth(req: any, res: Response) {
     const token = req.header("auth-token");
-    if (!token) res.status(401).send("access denied");
+    if (!token) res.status(401).send("Access Denied");
 
     try {
       const verified = jwt.verify(token, SECRET_TOKEN);

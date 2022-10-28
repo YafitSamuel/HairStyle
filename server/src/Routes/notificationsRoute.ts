@@ -4,6 +4,7 @@ import {
   getById,
   post,
   remove,
+  upDate
 } from "../Controllers/notificationsController";
 
 const notificationsRouter = express.Router();
@@ -17,6 +18,10 @@ notificationsRouter.get("/notification/:id", getById);
 // POST users
 
 notificationsRouter.post("/notification", post);
+
+// PUT users
+
+notificationsRouter.put("/notification/:id", upDate);
 
 // POST delete
 

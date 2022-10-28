@@ -2,6 +2,7 @@ import { Response, Request } from "express";
 import userSchema from "../Models/User";
 
 const get = async (req: Request, res: Response) => {
+  console.log('get users',req.body)
   await userSchema
     .find()
     .then((data) => {
@@ -20,11 +21,14 @@ const getById = async (req: Request, res: Response) => {
 };
 
 const post = async (req: Request, res: Response) => {
+  console.log("body", req.body)
   await userSchema
     .create(req.body)
+    
     .then((userData) => res.status(200).send(`this user add : ${userData}`))
     .catch((err) => res.status(400).send(err));
 };
+
 
 const upDate = async (req: Request, res: Response) => {
   await userSchema
