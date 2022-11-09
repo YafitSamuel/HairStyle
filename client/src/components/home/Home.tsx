@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Box
       sx={{
-        backgroundColor: "#282c34",
+        // backgroundColor: "#282c34",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -21,7 +21,7 @@ export default function Home() {
     >
       <Logo />
 
-      <Button
+      {/* <Button
         className="Button"
         sx={{
           marginTop: 3,
@@ -48,7 +48,7 @@ export default function Home() {
       >
         Log in
        
-      </Button>
+      </Button> */}
     </Box>
   );
 }

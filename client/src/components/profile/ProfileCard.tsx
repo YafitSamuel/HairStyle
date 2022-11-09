@@ -13,14 +13,15 @@ export default function ProfileCard(props: any) {
       sx={{
         maxWidth: 350,
         color: "rgb(240, 119, 139)",
-        backgroundColor: "#282c34",
+        backgroundColor: "rgb(244, 237, 225)",
       }}
     >
       <CardActionArea>
         <CardMedia
-          sx={{ borderRadius: 350, border: 1 }}
+          sx={{ borderRadius: 370, border: 1 }}
           component="img"
-          height="170"
+          height="200"
+         
           image={props.img}
           alt="profile img"
         />

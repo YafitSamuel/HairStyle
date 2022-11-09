@@ -1,5 +1,34 @@
 .colorText{
-background-color: rgb(240, 119, 139);
+/* background-color: rgb(240, 119, 139); */
 color: #ffe4c4;
 }
-
+.nav{
+    /* background-color: rgb(240, 119, 139); */
+    color: #f1e1ce;
+margin-top: 20px;
+}
+.nav button{
+    width: 180px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px ;
+    margin: 8px;
+    /* padding: 10px; */
+    /* flex-direction: column; */
+    font-size: small;
+}
+nav a{
+    color: rgb(240, 119, 139);
+    text-decoration: none
+}
+button .Icon{
+    color: rgb(240, 119, 139);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    /* align-items: center; */
+}

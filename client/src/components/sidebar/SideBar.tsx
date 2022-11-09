@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+import MenuItem from "@mui/material/";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -93,7 +93,7 @@ export default function SideBae() {
         component="div"
       ></Typography>
       <IconButton
-        color="inherit"
+        // color="inherit"
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
@@ -123,13 +123,17 @@ export default function SideBae() {
           </IconButton>
           <MiniLogo />
         </DrawerHeader>
-        <Link to="/"><FaHome className="Icon" /> Home </Link>
-        <Link to="/profile"><FaUserAlt/>Profile </Link>
-        <Link to="/login"><FaSignOutAlt/>Login</Link>
-        <Link to="/register">Register </Link>
-        <Link to="/Appointment"><FaRegCalendarCheck/>Appointment </Link>
-        <Link to="/appointments"><FaRegCalendarPlus/>CreateAppointment </Link>
+        
+<nav className="nav">
+       <button> <FaHome className="Icon" /><Link to="/"> Home </Link></button>
+       <button> <FaUserAlt className="Icon" /><Link to="/profile">Profile </Link></button>
+       <button><FaSignOutAlt className="Icon"/><Link to="/login">Login</Link></button>
+       <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">portfolio </Link></button>
+       <button> <Link to="/register">Register </Link></button>
+       <button > <FaRegCalendarCheck className="Icon"/><Link to="/Appointment">My Appointments </Link></button>
+       <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">Create Appointment </Link></button>
 
+</nav>
        
       </Drawer>
     </Box>

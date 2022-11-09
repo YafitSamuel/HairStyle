@@ -8,7 +8,7 @@ export default function Profile() {
     
     <Box
       sx={{
-        backgroundColor: "#282c34",
+        backgroundColor: "rgb(244, 237, 225)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

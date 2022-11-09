@@ -15,7 +15,6 @@ function AppRouter() {
         <Router>
         <SideBae />
           <Routes>
-            
             <Route path='/' element={<Home />} />
             <Route path='/appointments' element={<CreateAppointment />} />            
             <Route path='/register' element={<Register />} />    
