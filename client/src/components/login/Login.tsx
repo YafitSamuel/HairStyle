@@ -3,21 +3,23 @@ import React from "react";
 import SendIcon from "@mui/icons-material/Send";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import axios from "axios";
 import { useState } from "react";
-
-const Logout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("email");
-};
+import axios from "axios";
 
 interface ILogin {
   password: string;
   email: string;
 }
-const Login: React.FC = () => {
-  const [LoggedIn, setIsLoggedIn] = useState(false);
-  const handleSubmit: (values: ILogin) => void = (values) => {
+
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is Required"),
+  password: Yup.string()
+    .min(6, "Must be 6 characters or more")
+    .required("Password is Required"),
+});
+const handleSubmit: (values: ILogin) => void = (values) => {
     axios
       .post("/login", values)
       .then((res) => {
@@ -26,32 +28,23 @@ const Login: React.FC = () => {
         if (res.status === 200) {
           localStorage.setItem("token", JSON.stringify(res.data));
           localStorage.setItem("email", JSON.stringify(values.email));
-          setIsLoggedIn(true);
-          alert(res.status);
+          alert(` Welcome Back:  ${values.email} `);
         }
       })
       .catch((err) => console.log(err));
   };
-
+const Login: React.FC = () => {
+  const [LoggedIn, setIsLoggedIn] = useState(false);
+  
   const formik = useFormik({
     initialValues: {
-      email: "",
       password: "",
+      email: "",
     },
-
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is Required"),
-      password: Yup.string()
-        .min(6, "Must be 6 characters or more")
-        .required("Password is Required"),
-    }),
     onSubmit: (values) => {
-      handleSubmit(values);
-    },
+      handleSubmit(values);},
   });
-
+ 
   return (
     <Box
       sx={{
@@ -65,17 +58,18 @@ const Login: React.FC = () => {
         padding: 3,
       }}
     >
+    
       <form onSubmit={formik.handleSubmit}>
         <TextField
           name="email"
-          helperText="Please enter your name"
+          helperText="Please enter your email"
           id="demo-helper-text-aligned"
           label="Email"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
-        />
+        /> 
         {formik.touched.email && formik.errors.email ? (
           <p>{formik.errors.email}</p>
         ) : null}
@@ -106,6 +100,7 @@ const Login: React.FC = () => {
           Signin
         </Button>
       </form>
+      {/* <button onClick={}>Logout</button> */}
     </Box>
   );
 };

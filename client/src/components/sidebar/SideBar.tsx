@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -10,12 +9,19 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import "./sidebar.css";
 import Logo from "../home/Logo";
 import MiniLogo from "./Mini Logo";
+import { Link } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
+import { FaRegCalendarPlus } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
+
+import { FaRegCalendarCheck } from "react-icons/fa";
+
+
+
 
 const drawerWidth = 200;
 
@@ -58,12 +64,10 @@ const AppBar = styled(MuiAppBar, {
     marginRight: drawerWidth,
   }),
 }));
-
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: "flex-start",
 }));
@@ -82,7 +86,6 @@ export default function SideBae() {
 
   return (
     <Box sx={{ display: "flex" }}>
-      {/* <CssBaseline /> */}
       <Typography
         variant="h6"
         noWrap
@@ -98,7 +101,6 @@ export default function SideBae() {
       >
         <MenuIcon />
       </IconButton>
-
       <Drawer
         sx={{
           width: drawerWidth,
@@ -111,49 +113,24 @@ export default function SideBae() {
         anchor="right"
         open={open}
       >
-        <DrawerHeader className="colorText" 
-        >
-                 
-
+        <DrawerHeader className="colorText">
           <IconButton onClick={handleDrawerClose}>
-
             {theme.direction === "rtl" ? (
               <ChevronLeftIcon />
             ) : (
               <ChevronRightIcon />
             )}
           </IconButton>
-          <MiniLogo/>
+          <MiniLogo />
         </DrawerHeader>
-        <Divider />
+        <Link to="/"><FaHome className="Icon" /> Home </Link>
+        <Link to="/profile"><FaUserAlt/>Profile </Link>
+        <Link to="/login"><FaSignOutAlt/>Login</Link>
+        <Link to="/register">Register </Link>
+        <Link to="/Appointment"><FaRegCalendarCheck/>Appointment </Link>
+        <Link to="/appointments"><FaRegCalendarPlus/>CreateAppointment </Link>
 
-        {[
-          "דף הבית ",
-          "פרופיל",
-          "קיבעי תור",
-          "תורים שלי",
-          "תיק עבודות",
-          "מוצרים לרכישה ",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ].map((text, index) => (
-          <ListItem className="colorText" key={text} disablePadding>
-            <ListItemButton className="colorText">
-              {/* <ListItemIcon><TripOriginSharpIcon  /></ListItemIcon> */}
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-
-        <Divider />
+       
       </Drawer>
     </Box>
   );

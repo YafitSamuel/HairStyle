@@ -10,9 +10,19 @@ interface ISignup {
   name: string;
   email: string;
 }
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .max(15, "Must be 15 characters or less")
+    .required("Name is Required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is Required"),
+  password: Yup.string()
+    .min(6, "Must be 6 characters or more")
+    .required("Password is Required"),
+});
 
-const Register: React.FC = () => {
-  const handleSubmit: (values: ISignup) => void = (values) => {
+const handleSubmit: (values: ISignup) => void = (values) => {
     axios
       .post("/register", values)
       .then((res) => {
@@ -20,31 +30,20 @@ const Register: React.FC = () => {
       })
       .catch((err) => console.log(err));
   };
-
+  
+const Register: React.FC = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
       password: "",
     },
-    
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(15, "Must be 15 characters or less")
-        .required("Name is Required"),
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is Required"),
-      password: Yup.string()
-        .min(6, "Must be 6 characters or more")
-        .required("Password is Required"),
-    }),
     onSubmit: (values) => {
       handleSubmit(values);
     },
   });
-
-  // console.log(formik.errors);
+  
+  // form
   return (
     <Box
       sx={{
@@ -110,7 +109,7 @@ const Register: React.FC = () => {
           type="submit"
           endIcon={<SendIcon />}
         >
-          Signup
+          create
         </Button>
       </form>
     </Box>
