@@ -6,25 +6,27 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Button } from "@mui/material";
+import { FaUserAlt } from "react-icons/fa";
 
 export default function ProfileCard(props: any) {
   return (
     <Card
-      sx={{
-        maxWidth: 350,
-        color: "rgb(240, 119, 139)",
-        backgroundColor: "rgb(244, 237, 225)",
-      }}
+    sx={{
+      display: "flex",
+      backgroundColor: "wheat",
+      color: "black",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      "& > :not(style)": { m: 1 },
+      boxShadow: "5px 5px 10px #ccc",
+      marginTop: 5,
+      padding: 3,
+    }}
     >
       <CardActionArea>
-        <CardMedia
-          sx={{ borderRadius: 370, border: 1 }}
-          component="img"
-          height="200"
-         
-          image={props.img}
-          alt="profile img"
-        />
+      
+        <FaUserAlt className="Icon" />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             Yafit Samuel

@@ -1,4 +1,6 @@
 import axios from "axios";
+// import { idText } from "typescript";
+
 
 //BASE_URL
 const api = axios.create({
@@ -20,7 +22,7 @@ const getAllUsers = () => {
 //GET USER BY ID
 const getUserById = () => {
   axios
-    .get("/users/632bc2a2ab8c9308e4cc7463")
+    .get(`/users/GHJKL`)
     .then((res) => {
       console.log(res);
     })

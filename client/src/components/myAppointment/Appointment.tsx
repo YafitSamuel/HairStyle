@@ -1,6 +1,10 @@
 import * as React from "react";
 import { Box } from "@mui/material";
 import NoHaveAppointment from "./NoHaveAppointment";
+import {getAllUsers}  from "../../api/user"; 
+import axios from "axios";
+ 
+
 
 export default function Appointment() {
   return (
@@ -33,6 +37,7 @@ export default function Appointment() {
           border: 2,
         }}
       >
+        <button>{ }</button>
         <p> נקבע תור במערכת</p>
         <p> ליום א' בשעה 14:00</p>
       </Box>

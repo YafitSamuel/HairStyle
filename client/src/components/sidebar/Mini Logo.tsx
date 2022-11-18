@@ -13,7 +13,8 @@ export default function MiniLogo() {
           width: 55,
           height: 40,
           marginLeft: 4,
-          color: "#282c34",
+          color: "wheat",
+          
           border: 2,
         }}
       />

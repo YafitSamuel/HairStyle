@@ -17,10 +17,7 @@ import { FaHome } from "react-icons/fa";
 import { FaUserAlt } from "react-icons/fa";
 import { FaRegCalendarPlus } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
-
 import { FaRegCalendarCheck } from "react-icons/fa";
-
-
 
 
 const drawerWidth = 200;
@@ -85,7 +82,7 @@ export default function SideBae() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex",}}>
       <Typography
         variant="h6"
         noWrap
@@ -93,7 +90,7 @@ export default function SideBae() {
         component="div"
       ></Typography>
       <IconButton
-        // color="inherit"
+        color="inherit"
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
@@ -126,12 +123,13 @@ export default function SideBae() {
         
 <nav className="nav">
        <button> <FaHome className="Icon" /><Link to="/"> Home </Link></button>
-       <button> <FaUserAlt className="Icon" /><Link to="/profile">Profile </Link></button>
+       <button> <FaHome className="Icon" /><Link to="/register">Register </Link></button>
        <button><FaSignOutAlt className="Icon"/><Link to="/login">Login</Link></button>
-       <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">portfolio </Link></button>
-       <button> <Link to="/register">Register </Link></button>
-       <button > <FaRegCalendarCheck className="Icon"/><Link to="/Appointment">My Appointments </Link></button>
+       <button> <FaUserAlt className="Icon" /><Link to="/profile">Profile </Link></button>
        <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">Create Appointment </Link></button>
+
+       <button > <FaRegCalendarCheck className="Icon"/><Link to="/Appointment">My Appointments </Link></button>
+       <button><FaRegCalendarPlus className="Icon"/><Link to="/portfolio">portfolio </Link></button>
 
 </nav>
        

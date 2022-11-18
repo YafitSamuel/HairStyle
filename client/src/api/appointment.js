@@ -11,6 +11,17 @@ const getAllAppointments = () => {
       console.log(err);
     });
 };
+// GET ById APPOINTMENT
+const getByIdAppointments= () => {
+  axios
+    .get(`/appointments/632bc2a2ab8c9308e4cc7463`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 //PUT APPOINTMENT
 
@@ -26,16 +37,12 @@ const upDateAppointment = () => {
 };
 
 // DELETE APPOINTMENT
-const AddAppointment = () => {
-  axios
-    .post("/appointments", {
-      userId: "mira",
-      typeOfTreatment: "mooooo",
-      date: "2020-10-09T22:00:00.000Z",
-    })
-    .then((res) => console.log(res))
-    .catch((err) => console.error(err));
-};
+// const AddAppointment = () => {
+//   axios
+//     .post("/appointments", {})
+//     .then((res) => console.log(res))
+//     .catch((err) => console.error(err));
+// };
 
 const deleteAppointment = () => {
   axios
@@ -49,4 +56,5 @@ export {
   getAllAppointments,
   deleteAppointment,
   upDateAppointment,
+  getByIdAppointments
 };

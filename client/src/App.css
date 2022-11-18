@@ -1,8 +1,9 @@
 .App {
   text-align: center;
   font-family: sans-serif;
-  color: rgb(240, 119, 139);
-
+  /* color: rgb(240, 119, 139); */
+  color: wheat;
+  background-color: black;
 }
 
 .App-logo {

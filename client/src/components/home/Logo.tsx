@@ -1,7 +1,7 @@
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-import logo from "../../images/אדלה.png";
+import logo from "../../images/Salon Logo.png";
 
 export default function Logo() {
   return (
@@ -11,10 +11,9 @@ export default function Logo() {
         src={logo}
         sx={{
           width: 300,
-          height: 150,
+          height: 300,
           marginBottom: 2,
-          color: "rgb(240, 119, 139)",
-          border: 2,
+          backgroundColor:'black',
         }}
       />
     </Stack>

@@ -7,6 +7,8 @@ import CreateAppointment from "../components/createAppointment/CreateAppointment
 import Home from "../components/home/Home";
 import Login from "../components/login/Login";
 import Appointment from "../components/myAppointment/Appointment";
+import CareerPortfolio from "../components/portfolio/CareerPortfolio";
+
 
 
 function AppRouter() {
@@ -21,6 +23,8 @@ function AppRouter() {
             <Route path='/login' element={<Login />} />
             <Route path='/Appointment' element={<Appointment />} />
             <Route path='/profile' element={<Profile />} />
+            <Route path='/portfolio' element={<CareerPortfolio/>} />
+
           </Routes>
         </Router> 
       

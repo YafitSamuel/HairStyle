@@ -3,8 +3,9 @@ import mongoose from "mongoose";
 const appointmentSchema = new mongoose.Schema(
   {
     userId: String,
-    typeOfTreatment: String,
-    date: Date
+    typeOfAppointment: String,
+    date: Date,
+    time:String
   },
   { timestamps: true }
 );

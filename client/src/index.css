@@ -4,12 +4,10 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-family: sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(244, 237, 225);
-    color: rgb(240, 119, 139);
-   background-image:"src/images/123.jpg";
+    background-color:black;
+    color: wheat;
 }
 
 code {
