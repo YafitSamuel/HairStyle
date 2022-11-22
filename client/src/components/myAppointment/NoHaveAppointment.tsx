@@ -22,6 +22,7 @@ export default function NoHaveAppointment() {
           border:2
         }}
       >
+
         <p>לא קיימים תורים</p>
         <p> במערכת</p>
       </Box>

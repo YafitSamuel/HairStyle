@@ -27,7 +27,7 @@ const CreateAppointment: React.FC = () => {
         typeOfAppointment: value.typeOfAppointment,
         time: value.time,
       })
-      .then((res) => console.log(res.data))
+      .then((res) => alert(res))
       .catch((err) => console.error(err));
   };
 

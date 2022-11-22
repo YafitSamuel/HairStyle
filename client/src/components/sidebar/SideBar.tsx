@@ -127,7 +127,7 @@ export default function SideBae() {
        <button><FaSignOutAlt className="Icon"/><Link to="/login">Login</Link></button>
        <button> <FaUserAlt className="Icon" /><Link to="/profile">Profile </Link></button>
        <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">Create Appointment </Link></button>
-
+       <button><FaRegCalendarPlus className="Icon"/><Link to="/admin">Admin</Link></button>
        <button > <FaRegCalendarCheck className="Icon"/><Link to="/Appointment">My Appointments </Link></button>
        <button><FaRegCalendarPlus className="Icon"/><Link to="/portfolio">portfolio </Link></button>
 

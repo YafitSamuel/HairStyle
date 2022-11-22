@@ -8,7 +8,7 @@ import Home from "../components/home/Home";
 import Login from "../components/login/Login";
 import Appointment from "../components/myAppointment/Appointment";
 import CareerPortfolio from "../components/portfolio/CareerPortfolio";
-
+import Admin from '../components/admin/Admin'
 
 
 function AppRouter() {
@@ -18,12 +18,16 @@ function AppRouter() {
         <SideBae />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/appointments' element={<CreateAppointment />} />            
+            <Route path='/appointments' element={<CreateAppointment />} />      
+            <Route path='/admin' element={<Admin/>} />            
+      
             <Route path='/register' element={<Register />} />    
             <Route path='/login' element={<Login />} />
             <Route path='/Appointment' element={<Appointment />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/portfolio' element={<CareerPortfolio/>} />
+            {/* <Route path='/portfolio' element={<Admin/>} /> */}
+
 
           </Routes>
         </Router> 
