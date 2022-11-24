@@ -4,10 +4,11 @@ import Logo from "./Logo";
 import Button from "@mui/material/Button";
 
 
-
 export default function Home() {
   return (
+  <div>
     <Box
+    
       sx={{
         // backgroundColor: "#282c34",
         display: "flex",
@@ -49,6 +50,9 @@ export default function Home() {
         Log in
        
       </Button> */}
+           
+
     </Box>
+    </div>
   );
 }

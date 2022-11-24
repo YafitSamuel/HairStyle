@@ -52,6 +52,7 @@ const deleteAppointment = () => {
 };
 
 export {
+  getAllAppointment,
   getAllAppointments,
   deleteAppointment,
   upDateAppointment,
