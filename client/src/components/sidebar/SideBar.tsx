@@ -91,6 +91,8 @@ export default function SideBae() {
       ></Typography>
       <IconButton
         color="inherit"
+       
+
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
@@ -122,14 +124,13 @@ export default function SideBae() {
         </DrawerHeader>
         
 <nav className="nav">
-       <button> <FaHome className="Icon" /><Link to="/"> Home </Link></button>
-       <button> <FaHome className="Icon" /><Link to="/register">Register </Link></button>
-       <button><FaSignOutAlt className="Icon"/><Link to="/login">Login</Link></button>
-       <button> <FaUserAlt className="Icon" /><Link to="/profile">Profile </Link></button>
-       <button><FaRegCalendarPlus className="Icon"/><Link to="/appointments">Create Appointment </Link></button>
-       <button><FaRegCalendarPlus className="Icon"/><Link to="/admin">Admin</Link></button>
-       <button > <FaRegCalendarCheck className="Icon"/><Link to="/Appointment">My Appointments </Link></button>
-       <button><FaRegCalendarPlus className="Icon"/><Link to="/portfolio">portfolio </Link></button>
+       <Link to="/"> דף הבית <FaHome className="Icon" /></Link>
+        <Link to="/profile">מידע אישי <FaUserAlt className="Icon" /></Link>
+      <Link to="/appointments">קביעת תור  </Link> <FaRegCalendarPlus className="Icon"/>
+       <Link to="/admin">יומן מנהל</Link><FaRegCalendarPlus className="Icon"/>
+       <Link to="/admin"> אודות</Link><FaRegCalendarPlus className="Icon"/>
+       <Link to="/Appointment">התורים שלי </Link><FaRegCalendarCheck className="Icon"/>
+      <Link to="/portfolio">עבודות להמחשה </Link> <FaRegCalendarPlus className="Icon"/>
 
 </nav>
        

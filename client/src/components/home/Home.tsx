@@ -4,13 +4,12 @@ import Logo from "./Logo";
 import Button from "@mui/material/Button";
 
 
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
   <div>
     <Box
-    
       sx={{
-        // backgroundColor: "#282c34",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -22,7 +21,7 @@ export default function Home() {
     >
       <Logo />
 
-      {/* <Button
+      <Button
         className="Button"
         sx={{
           marginTop: 3,
@@ -33,7 +32,7 @@ export default function Home() {
           border: 2,
         }}
       >
-        Sign Up
+        <Link to="/register"> Sign Up</Link>
       </Button>
       <Button
         className="Button"
@@ -45,13 +44,9 @@ export default function Home() {
           color: "rgb(240, 119, 139)",
           border: 2,
         }}
-        
       >
-        Log in
-       
-      </Button> */}
-           
-
+            <Link to="/login"> Log in </Link>
+      </Button>
     </Box>
     </div>
   );

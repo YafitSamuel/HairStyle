@@ -22,9 +22,9 @@ const getAllUsers = () => {
 //GET USER BY ID
 const getUserById = () => {
   axios
-    .get(`/users/GHJKL`)
+    .get("/users/6372d8e4b742e81f18aefbbe")
     .then((res) => {
-      console.log(res);
+      console.log(res.data);
     })
     .catch((err) => {
       console.log(err);

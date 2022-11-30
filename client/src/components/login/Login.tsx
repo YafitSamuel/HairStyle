@@ -32,7 +32,7 @@ const handleSubmit: (values: ILogin) => void = (values) => {
       if (res.status === 200) {
         localStorage.setItem("token", JSON.stringify(res.data));
         localStorage.setItem("email", JSON.stringify(values.email));
-        alert(` Welcome Back:  ${values.email} `);
+        alert(` ברוכה השבה  `);
       }
     })
     .catch((err) => console.log(err));

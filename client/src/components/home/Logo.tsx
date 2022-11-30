@@ -13,7 +13,7 @@ export default function Logo() {
           width: 300,
           height: 300,
           marginBottom: 2,
-          backgroundColor:'black',
+          backgroundColor:"rgb(184, 61, 81)",
         }}
       />
     </Stack>

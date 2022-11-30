@@ -1,29 +1,25 @@
 
 .nav {
-  margin-top: 20px;
+  margin-top: 10px;
+  background-color: rgb(184, 61, 81);
+
 }
-.nav button {
+nav a {
   width: 180px;
-  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
   align-items: center;
-  border: 1px solid;
-  border-radius: 10px;
   margin: 8px;
-  font-size: xx-small;
-}
-nav a {
-  color: black;
+  font-size: small;
+  color: white;
   text-decoration: none;
 }
-button .Icon {
-  color: black;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
+.Icon {
+  color: white;
+
+  width: 15px;
+  height: 15px;
   margin: 9px;
 }
+

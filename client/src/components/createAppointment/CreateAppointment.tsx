@@ -27,7 +27,11 @@ const CreateAppointment: React.FC = () => {
         typeOfAppointment: value.typeOfAppointment,
         time: value.time,
       })
-      .then((res) => alert(res))
+      .then((res) =>{ 
+        console.log("התור נקבע בהצלה ")
+        alert("התור נקבע בהצלה ")
+    
+    })
       .catch((err) => console.error(err));
   };
 

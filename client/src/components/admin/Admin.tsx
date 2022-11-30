@@ -18,7 +18,6 @@ import {
   TodayButton,
 } from "@devexpress/dx-react-scheduler-material-ui";
 import axios from "axios";
-import { array } from "yup";
 // import './admin.css'
 
 const getAllAppointment = async () => {
@@ -50,20 +49,20 @@ const appointments: Array<AppointmentModel> = [
     type: "work",
   },
 ];
-const Admin:React.FC= () => {
+const Admin = () => {
   const [currentDate, setCurrentDate] =
     React.useState<SchedulerDateTime>("2018-10-31");
 
-  // const [appointments, setAppointment] = React.useState(undefined);
+  // const [appointments, setAppointment] = React.useState<any>(undefined);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllAppointment();
-      // setAppointment(data);
-      console.log(data);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await getAllAppointment();
+  //     setAppointment(data);
+  //     console.log(data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <Paper>
