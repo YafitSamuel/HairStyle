@@ -68,8 +68,8 @@ const Register: React.FC = () => {
         <Avatar sx={{ m: 1, bgcolor: "rgb(184, 61, 81)" }}>
           <LockOutlinedIcon />
         </Avatar >
-        <Typography component="h1" variant="h5">
-          Sign Up
+        <Typography component="h1" variant="body2"  color="rgb(184, 61, 81)">
+         צור חשבון
         </Typography>
 
         <form onSubmit={formik.handleSubmit}>
@@ -142,11 +142,11 @@ const Register: React.FC = () => {
             create
           </Button>
         </form>
-        {/* <Grid item> */}
-          <Link href="/Login" variant="body2">
+       
+          <Link href="/Login" variant="body2"  color="rgb(184, 61, 81)">
             {"Don't have an account? Sign in"}
           </Link>
-        {/* </Grid> */}
+        
       </Box>
    
   );

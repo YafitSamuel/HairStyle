@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./create.css";
-
+import Typography from "@mui/material/Typography";
+import {  Button } from "@mui/material";
 
 const CreateAppointment: React.FC = () => {
   const [value, setValue] = useState({
@@ -39,7 +40,9 @@ const CreateAppointment: React.FC = () => {
     <div className="container">
      
       <form className="form" onSubmit={handleSubmit}>
-      <h4>Create:</h4>
+      <Typography component="h1" variant="body2"  color="rgb(184, 61, 81)">
+         צור תור 
+        </Typography>
         <input
           className="input"
           name="userId"
@@ -82,7 +85,22 @@ const CreateAppointment: React.FC = () => {
             handelChange(e);
           }}
         />
-        <button className="button" type="submit"> Submit</button>
+        {/* <button  type="submit"> Submit</button> */}
+        <Button className="button"
+            sx={{
+              marginTop: 3,
+              borderRadius: 3,
+              padding: 1,
+              width: 200,
+              color: "rgb(184, 61, 81)",
+
+              border: 2,
+            }}
+            type="submit"
+           
+          >
+            create
+          </Button>
       </form>
     </div>
   );

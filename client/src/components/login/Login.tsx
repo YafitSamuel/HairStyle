@@ -61,25 +61,12 @@ const Login: React.FC = () => {
         padding: 3,
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          backgroundColor: "wheat",
-          color: "black",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          "& > :not(style)": { m: 1 },
-          boxShadow: "5px 5px 10px #ccc",
-          marginTop: 5,
-          padding: 3,
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+    
+    <Avatar sx={{ m: 1, bgcolor: "rgb(184, 61, 81)" }}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
+        <Typography component="h1" variant="body2" color="rgb(184, 61, 81)">
+          כניסה לחשבון שלך
         </Typography>
         <form onSubmit={formik.handleSubmit}>
           <TextField
@@ -135,11 +122,11 @@ const Login: React.FC = () => {
           </Button>
         </form>
         <Grid item>
-          <Link href="/register" variant="body2">
-            {"Don't have an account? Sign Un"}
+          <Link href="/register" variant="body2" color="rgb(184, 61, 81)">
+            {"Don't have an account? Sign Up"  }
           </Link>
         </Grid>
-      </Box>
+      
     </Box>
   );
 };

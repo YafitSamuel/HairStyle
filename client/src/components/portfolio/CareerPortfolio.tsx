@@ -9,9 +9,8 @@ export default function CareerPortfolio() {
   return (
     <Box
       sx={{
-        backgroundColor: "rgb(244, 237, 225)",
+        backgroundColor: "rgb(184, 61, 81)",
         display: "flex",
-       
         alignItems: "center",
         justifyContent: "center",
         "& > :not(style)": { m: 1 },

@@ -19,7 +19,6 @@ import { FaRegCalendarPlus } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa";
 
-
 const drawerWidth = 200;
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })<{
@@ -67,6 +66,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
   justifyContent: "flex-start",
+  backgroundColor: "rgb(184, 61, 81)" 
 }));
 
 export default function SideBae() {
@@ -82,17 +82,15 @@ export default function SideBae() {
   };
 
   return (
-    <Box sx={{ display: "flex",}}>
+    <Box sx={{ display: "flex", backgroundColor: "rgb(184, 61, 81)" }}>
       <Typography
         variant="h6"
         noWrap
-        sx={{ flexGrow: 1 }}
+        sx={{ flexGrow: 1  }}
         component="div"
       ></Typography>
       <IconButton
         color="inherit"
-       
-
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
@@ -122,18 +120,26 @@ export default function SideBae() {
           </IconButton>
           <MiniLogo />
         </DrawerHeader>
-        
-<nav className="nav">
-       <Link to="/"> דף הבית <FaHome className="Icon" /></Link>
-        <Link to="/profile">מידע אישי <FaUserAlt className="Icon" /></Link>
-      <Link to="/appointments">קביעת תור  </Link> <FaRegCalendarPlus className="Icon"/>
-       <Link to="/admin">יומן מנהל</Link><FaRegCalendarPlus className="Icon"/>
-       <Link to="/admin"> אודות</Link><FaRegCalendarPlus className="Icon"/>
-       <Link to="/Appointment">התורים שלי </Link><FaRegCalendarCheck className="Icon"/>
-      <Link to="/portfolio">עבודות להמחשה </Link> <FaRegCalendarPlus className="Icon"/>
 
-</nav>
-       
+        <nav className="nav" >
+          <Link to="/">
+            {" "}
+            דף הבית <FaHome className="Icon" />
+          </Link>
+          <Link to="/profile">
+            מידע אישי <FaUserAlt className="Icon" />
+          </Link>
+          <Link to="/appointments">קביעת תור <FaRegCalendarPlus className="Icon" /></Link>
+          
+          <Link to="/admin">יומן מנהל<FaRegCalendarPlus className="Icon" /></Link>
+          
+          <Link to="/admin"> אודות<FaRegCalendarPlus className="Icon" /></Link>
+          
+          <Link to="/Appointment">התורים שלי <FaRegCalendarCheck className="Icon" /></Link>
+          
+          <Link to="/portfolio">עבודות להמחשה <FaRegCalendarPlus className="Icon" /></Link>{" "}
+          
+        </nav>
       </Drawer>
     </Box>
   );

@@ -6,8 +6,9 @@ body {
     font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    background-color:black;
-    color: wheat;
+    /* background-color:black; */
+    color:  "rgb(184, 61, 81)",
+    ;
 }
 
 code {

@@ -2,8 +2,6 @@ import * as React from "react";
 import { Box } from "@mui/material";
 import Logo from "./Logo";
 import Button from "@mui/material/Button";
-
-
 import { Link } from "react-router-dom";
 export default function Home() {
   return (
@@ -32,6 +30,7 @@ export default function Home() {
           border: 2,
         }}
       >
+        
         <Link to="/register"> Sign Up</Link>
       </Button>
       <Button

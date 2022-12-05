@@ -7,17 +7,16 @@
 nav a {
   width: 180px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  margin: 8px;
+  margin: 37px;
   font-size: small;
   color: white;
   text-decoration: none;
 }
 .Icon {
   color: white;
-
   width: 15px;
   height: 15px;
   margin: 9px;
