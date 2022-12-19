@@ -57,8 +57,7 @@ const Register: React.FC = () => {
         color: "rgb(184, 61, 81)",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "center",      
         "& > :not(style)": { m: 1 },
         marginTop: 1,
         padding: 3,
@@ -79,11 +78,13 @@ const Register: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               width: 300,
+              margin:3,
+              
+
             }}
             className="textField"
             name="name"
-            helperText="Please enter your name"
-            label="Name"
+            label="שם מלא"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
@@ -96,10 +97,12 @@ const Register: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               width: 300,
+              textAlign:"center",
+
+              margin:3,
             }}
             name="email"
-            helperText="Please enter your email "
-            label="Email"
+            label="אימייל"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -113,10 +116,12 @@ const Register: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               width: 300,
+              margin:3,
+              textAlign:"center",
+
             }}
             name="password"
-            helperText="Please enter your password "
-            label="password"
+            label="סיסמא"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
@@ -139,7 +144,7 @@ const Register: React.FC = () => {
             type="submit"
             endIcon={<SendIcon />}
           >
-            create
+            הירשם
           </Button>
         </form>
        

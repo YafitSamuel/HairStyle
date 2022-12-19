@@ -1,13 +1,9 @@
 .App {
   text-align: center;
   font-family: sans-serif;
-  background-color:white;
+  background-color: white;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-
-

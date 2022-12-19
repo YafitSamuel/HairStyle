@@ -13,11 +13,13 @@ import "./sidebar.css";
 import Logo from "../home/Logo";
 import MiniLogo from "./Mini Logo";
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { FaUserAlt } from "react-icons/fa";
 import { FaRegCalendarPlus } from "react-icons/fa";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaWaze } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const drawerWidth = 200;
 
@@ -66,7 +68,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
   justifyContent: "flex-start",
-  backgroundColor: "rgb(184, 61, 81)" 
+  backgroundColor: "rgb(184, 61, 81)",
 }));
 
 export default function SideBae() {
@@ -83,12 +85,15 @@ export default function SideBae() {
 
   return (
     <Box sx={{ display: "flex", backgroundColor: "rgb(184, 61, 81)" }}>
+      <MiniLogo />
+
       <Typography
         variant="h6"
         noWrap
-        sx={{ flexGrow: 1  }}
+        sx={{ flexGrow: 1 }}
         component="div"
       ></Typography>
+
       <IconButton
         color="inherit"
         aria-label="open drawer"
@@ -121,24 +126,35 @@ export default function SideBae() {
           <MiniLogo />
         </DrawerHeader>
 
-        <nav className="nav" >
+        <nav className="nav">
           <Link to="/">
-            {" "}
-            דף הבית <FaHome className="Icon" />
+            הרשמה והתחברות <LockOutlinedIcon className="Icon" />
           </Link>
-          <Link to="/profile">
-            מידע אישי <FaUserAlt className="Icon" />
+
+          <Link to="/appointments">
+            קביעת תור <FaRegCalendarPlus className="Icon" />
           </Link>
-          <Link to="/appointments">קביעת תור <FaRegCalendarPlus className="Icon" /></Link>
-          
-          <Link to="/admin">יומן מנהל<FaRegCalendarPlus className="Icon" /></Link>
-          
-          <Link to="/admin"> אודות<FaRegCalendarPlus className="Icon" /></Link>
-          
-          <Link to="/Appointment">התורים שלי <FaRegCalendarCheck className="Icon" /></Link>
-          
-          <Link to="/portfolio">עבודות להמחשה <FaRegCalendarPlus className="Icon" /></Link>{" "}
-          
+
+          <Link to="/Appointment">
+            התורים שלי <FaRegCalendarCheck className="Icon" />
+          </Link>
+
+          <a href="https://wa.me/+9720548170556/?text=urlencodedtext">
+            WhatsApp <WhatsAppIcon className="Icon" />
+          </a>
+
+          <a href="https://instagram.com/rivka_adela_hair?igshid=YmMyMTA2M2Y=">
+            Instagram <InstagramIcon className="Icon" />
+          </a>
+
+          <a href="https://instagram.com/rivka_adela_hair?igshid=YmMyMTA2M2Y=">
+            ניווט לבית העסק
+            <FaWaze className="Icon" />
+          </a>
+          <Link to="/admin">
+            יומן מנהל
+            <FaRegCalendarPlus className="Icon" />
+          </Link>
         </nav>
       </Drawer>
     </Box>

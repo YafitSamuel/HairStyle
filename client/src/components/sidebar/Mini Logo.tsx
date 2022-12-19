@@ -13,9 +13,9 @@ export default function MiniLogo() {
           width: 55,
           height: 40,
           marginLeft: 4,
-          color: "wheat",
+          color: "rgb(184, 61, 81)",
           
-          border: 2,
+          border: 8,
         }}
       />
     </Stack>

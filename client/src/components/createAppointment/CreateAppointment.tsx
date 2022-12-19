@@ -85,7 +85,6 @@ const CreateAppointment: React.FC = () => {
             handelChange(e);
           }}
         />
-        {/* <button  type="submit"> Submit</button> */}
         <Button className="button"
             sx={{
               marginTop: 3,
@@ -93,11 +92,9 @@ const CreateAppointment: React.FC = () => {
               padding: 1,
               width: 200,
               color: "rgb(184, 61, 81)",
-
               border: 2,
             }}
-            type="submit"
-           
+            type="submit"          
           >
             create
           </Button>

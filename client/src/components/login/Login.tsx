@@ -56,9 +56,9 @@ const Login: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         "& > :not(style)": { m: 1 },
-        boxShadow: "5px 5px 10px #ccc",
         marginTop: 5,
         padding: 3,
+       
       }}
     >
     
@@ -75,11 +75,12 @@ const Login: React.FC = () => {
               flexDirection: "column",
               width: 300,
               height: "5",
+              margin:3
             }}
             name="email"
-            helperText="Please enter your email"
+            // helperText="Please enter your email"
             id="demo-helper-text-aligned"
-            label="Email"
+            label="אימייל"
             type="text"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -88,16 +89,18 @@ const Login: React.FC = () => {
           {formik.touched.email && formik.errors.email ? (
             <p>{formik.errors.email}</p>
           ) : null}
+
           <TextField
             sx={{
               display: "flex",
               flexDirection: "column",
               width: 300,
               height: "5",
+              margin:3
             }}
             name="password"
-            helperText="Please enter your password "
-            label="password"
+            // helperText="Please enter your password "
+            label="סיסמא"
             type="password"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
@@ -118,7 +121,7 @@ const Login: React.FC = () => {
             type="submit"
             endIcon={<SendIcon />}
           >
-            Signin
+           כניסה
           </Button>
         </form>
         <Grid item>
