@@ -5,7 +5,7 @@ import CreateAppointment from "../components/createAppointment/CreateAppointment
 import Home from "../components/home/Home";
 import Login from "../components/login/Login";
 import Appointment from "../components/myAppointment/Appointment";
-import Admin from "../components/admin/Admin";
+import Admin from "../components/admin/admin";
 
 function AppRouter() {
   return (
@@ -13,7 +13,7 @@ function AppRouter() {
       <Router>
         <SideBae />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/appointments" element={<CreateAppointment />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/register" element={<Register />} />

@@ -9,13 +9,11 @@ import { appointmentRouter } from "./Routes/appointmentRoutes";
 import bcrypt from "bcrypt"
 
 
-
-
 import { register, login } from "../config/auth";
 
+dotenv.config();
 const port = process.env.PORT ;
 const app = express();
-dotenv.config();
 connectDb.then((val) => val).catch((err) => err);
 app.use(express.json());
 app.use(router);

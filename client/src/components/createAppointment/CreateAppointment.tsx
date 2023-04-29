@@ -75,16 +75,7 @@ const CreateAppointment: React.FC = () => {
             handelChange(e);
           }}
         />
-        <input
-          className="input"
-          name="typeOfAppointment"
-          placeholder="typeOfAppointment"
-          type="text"
-          value={value.typeOfAppointment}
-          onChange={(e) => {
-            handelChange(e);
-          }}
-        />
+ 
         <Button className="button"
             sx={{
               marginTop: 3,

@@ -37,11 +37,11 @@ export default function Appointment() {
           border: 2,
         }}
       >
-        <button>{ }</button>
+        
         <p> נקבע תור במערכת</p>
         <p> ליום א' בשעה 14:00</p>
       </Box>
-      <NoHaveAppointment />
+      {/* <NoHaveAppointment /> */}
     </Box>
   );
 }
